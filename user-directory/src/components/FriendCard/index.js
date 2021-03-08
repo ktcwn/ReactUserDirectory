@@ -1,5 +1,6 @@
 import React from "react";
-import "./style.css";
+import "./friend.css";
+
 
 function FriendCard(props) {
   return (
@@ -8,23 +9,32 @@ function FriendCard(props) {
         <img alt={props.name} src={props.image} />
       </div>
       <div className="content">
-        <ul>
-          <li>
-            <strong>Name:</strong> {props.name}
-          </li>
-          <li>
-            <strong>Phone:</strong> {props.phone}
-          </li>
-          <li>
-            <strong>Email:</strong> {props.email}
-          </li>
-          <li>
-            <strong>DOB:</strong> {props.dob}
-          </li>
-        </ul>
+        <table striped bordered hover>
+          <thead>
+            <tr>
+              <th>Image</th>
+              <th>Name</th>
+              <th>Phone</th>
+              <th>Email</th>
+              <th>DOB</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td> </td>
+              <td>{props.name}</td>
+              <td>{props.phone}</td>
+              <td>{props.email}</td>
+              <td>{props.dob}</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   );
 }
 
+
+
 export default FriendCard;
+
