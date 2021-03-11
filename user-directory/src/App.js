@@ -1,34 +1,31 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Table } from "react-bootstrap";
 import Wrapper from "./components/Wrapper";
 import Title from "./components/Title";
-import FriendCard from "./components/FriendCard";
-import friends from "./friends.json";
+import EmployeeCard from "./components/EmployeeCard";
+import API from "./utils/API";
 
 function App() {
+  const [employeeArray, setEmployeeArray] = useState([])
+  useEffect(() => {
+    API.getUsers()
+      .then(res => { setEmployeeArray(res.data.results) })
+  }, [])
+
   return (
     <Wrapper>
       <Title>Employee Directory</Title>
-      <FriendCard
-        name={friends[0].name}
-        image={friends[0].image}
-        phone={friends[0].phone}
-        email={friends[0].email}
-        dob={friends[0].dob}
-      />
-      <FriendCard
-        name={friends[1].name}
-        image={friends[1].image}
-        phone={friends[1].phone}
-        email={friends[1].email}
-        dob={friends[1].dob}
-      />
-      <FriendCard
-        name={friends[2].name}
-        image={friends[2].image}
-        phone={friends[2].phone}
-        email={friends[2].email}
-        dob={friends[2].dob}
-      />
+      {employeeArray.map((employee) => {
+        return <EmployeeCard
+          firstName={employee.name.first}
+          lastName={employee.name.last}
+          image={employee.picture.thumbnail}
+          phone={employee.phone}
+          email={employee.email}
+          dob={employee.dob.age}
+        />
+      })}
     </Wrapper>
   );
 }
