@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Table } from "react-bootstrap";
 import Wrapper from "./components/Wrapper";
 import Title from "./components/Title";
 import EmployeeCard from "./components/EmployeeCard";
 import API from "./utils/API";
+
 
 function App() {
   const [employeeArray, setEmployeeArray] = useState([])
@@ -20,7 +20,7 @@ function App() {
         return <EmployeeCard
           firstName={employee.name.first}
           lastName={employee.name.last}
-          image={employee.picture.thumbnail}
+          image={employee.picture.medium}
           phone={employee.phone}
           email={employee.email}
           dob={employee.dob.age}
