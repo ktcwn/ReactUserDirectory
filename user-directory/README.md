@@ -1,4 +1,4 @@
-# Note Taker Web Application
+# React Employee Directory
 
 ## Description
 
