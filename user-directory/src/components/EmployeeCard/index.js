@@ -5,6 +5,8 @@ import { Table } from "react-bootstrap";
 
 
 function EmployeeCard(props) {
+  this.sortEmployees = this.sortEmployees.bind(this)
+
   return (
     <Table striped bordered hover>
       <thead>
