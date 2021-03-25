@@ -2,9 +2,9 @@
 
 ## Description
 
-### [Deployed to Netlify](https://vibrant-lewin-f0ac1a.netlify.app/)
+### [Deployed to Netlify](https://optimistic-johnson-cf7ee8.netlify.app/)
 
-### [Repository on Github](https://github.com/ktcwn/ReactEmployeeDirectory)
+### [Repository on Github](https://github.com/ktcwn/ReactUserDirectory)
 
 ## About
 
